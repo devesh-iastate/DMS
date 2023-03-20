@@ -1,0 +1,9 @@
+/home/devesh/Desktop/Projects/DMS/Data/
+docker container run --name devcont -v /home/devesh/Desktop/Projects/DMS/Data/:/Data -p 8000:8000  devcont
+docker container run --add-host=mongoservice:mongodb://127.0.0.1:27017/?appName=mongosh+1.6.1 --name devcont -v /home/devesh/Desktop/Projects/DMS/Data/:/Data -p 8000:8000  devcont
+docker container run --add-host=mongoservice:127.0.0.1 --name devcont -v /home/devesh/Desktop/Projects/DMS/Data/:/Data -p 8000:8000  devcont
+docker container run --name devcont --network DMSNetwork -v /home/devesh/Desktop/Projects/DMS/Data/:/Data -p 8000:8000  devcont
+
+mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1
+# docker run --name mongodb -d -v /var/lib/mongodb:/data/db -p 27017:27017 mongo
+docker run --name mongodb -d -v /var/lib/mongodb:/data/db -p 27017:27017 mongo
